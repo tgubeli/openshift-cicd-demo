@@ -41,7 +41,7 @@ Argo CD continuously monitor the configurations stored in the Git repository and
 1. Get an OpenShift cluster via https://try.openshift.com
 1. Download [OpenShift CLI](https://mirror.openshift.com/pub/openshift-v4/clients/ocp/latest/) and [Tekton CLI](https://github.com/tektoncd/cli/releases)
 1. Install OpenShift Pipelines Operator
-1. Install OpenShift GitOps Operator
+1. Install OpenShift GitOps Operator and deploy an ArgoCD server instance:
     ```text
     $ oc apply -f argo/argocd.yaml -n demo-cicd
     ```
