@@ -16,8 +16,8 @@ This repo is a CI/CD demo using [Tekton Pipelines](http://www.tekton.dev) for co
 
 ## Prerequisites
 
-* OpenShift Pipelines 1.5
-* OpenShift GitOps 1.2
+* OpenShift Pipelines 1.5 (must be pre installed)
+* OpenShift GitOps 1.2 (must be pre installed)
 ## Continuous Integration
 
 On every push to the `spring-petclinic` git repository on Gogs git server, the following steps are executed within the Tekton pipeline:
@@ -39,8 +39,12 @@ Argo CD continuously monitor the configurations stored in the Git repository and
 ## Deploy
 
 1. Get an OpenShift cluster via https://try.openshift.com
-1. Install OpenShift GitOps Operator
 1. Download [OpenShift CLI](https://mirror.openshift.com/pub/openshift-v4/clients/ocp/latest/) and [Tekton CLI](https://github.com/tektoncd/cli/releases)
+1. Install OpenShift Pipelines Operator
+1. Install OpenShift GitOps Operator
+    ```text
+    $ oc apply -f argo/argocd.yaml -n demo-cicd
+    ```
 1. Deploy the demo
 
     ```text
